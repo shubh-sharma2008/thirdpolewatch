@@ -373,5 +373,19 @@
     </footer>
 
     <script src="js/main.js"></script>
+<!-- Scroll progress bar and back-to-top -->
+<div id="scrollBar"></div>
+<button id="toTop" type="button" aria-label="Back to top">↑</button>
+<script>
+(function(){
+    var bar = document.getElementById('scrollBar'), top = document.getElementById('toTop');
+    window.addEventListener('scroll', function(){
+        var h = document.documentElement.scrollHeight - window.innerHeight;
+        bar.style.width = (h > 0 ? window.scrollY / h * 100 : 0) + '%';
+        top.classList.toggle('show', window.scrollY > 500);
+    });
+    top.addEventListener('click', function(){ window.scrollTo({ top: 0, behavior: 'smooth' }); });
+})();
+</script> 
 </body>
 </html>
