@@ -745,3 +745,27 @@ a {
     height: 100%;
     border: 0;
 }
+.tool-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 1.5rem; }
+.tool-box { background: #fff; border: 1px solid var(--border); border-radius: 20px; padding: 1.5rem; box-shadow: var(--shadow); }
+.tool-box h3 { margin-bottom: 0.5rem; color: var(--dark); }
+.tool-hint { font-size: 0.9rem; color: var(--text-light); margin-bottom: 1rem; }
+.tool-box label { display: block; font-size: 0.9rem; font-weight: 600; margin: 0.8rem 0 0.25rem; }
+.tool-box input { width: 100%; padding: 0.65rem 0.8rem; border: 1px solid var(--border); border-radius: 8px; font: inherit; }
+.tool-box button { margin-top: 1.1rem; width: 100%; cursor: pointer; border: 0; }
+.tool-result { margin-top: 1.1rem; padding: 1rem; border-radius: 10px; background: var(--accent-soft); color: var(--dark); min-height: 3rem; }
+.tool-result.warn { background: #FEF3C7; }
+.tool-result.bad { background: #FEE2E2; }
+.gallery-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 1.25rem; }
+.gallery-grid figure { margin: 0; border-radius: 16px; overflow: hidden; background: #fff; box-shadow: var(--shadow); }
+.gallery-grid img { display: block; width: 100%; aspect-ratio: 16 / 10; object-fit: cover; transition: transform 0.4s ease; }
+.gallery-grid figure:hover img { transform: scale(1.06); }
+.gallery-grid figcaption { padding: 0.6rem 0.9rem; font-size: 0.85rem; color: var(--text-light); }
+
+#scrollBar { position: fixed; top: 0; left: 0; height: 4px; width: 0; background: var(--gradient); z-index: 2000; }
+
+#toTop { position: fixed; right: 1.25rem; bottom: 1.25rem; width: 46px; height: 46px; border: 0; border-radius: 50%; background: var(--primary); color: #fff; font-size: 1.3rem; cursor: pointer; box-shadow: var(--shadow-lg); opacity: 0; pointer-events: none; transition: opacity 0.3s ease, transform 0.3s ease; z-index: 1500; }
+#toTop.show { opacity: 1; pointer-events: auto; }
+#toTop:hover { transform: translateY(-3px); background: var(--primary-dark); }
+
+::selection { background: var(--accent); color: #fff; }
+a:focus-visible, button:focus-visible, input:focus-visible { outline: 3px solid var(--accent); outline-offset: 2px; }
