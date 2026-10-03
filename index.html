@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Digital Monitoring of Glacier Melting | Himalayan Cryosphere</title>
+    <meta name="description" content="Educational platform on digital monitoring of glacier melting in the Himalayan region – Earth's Third Pole. Learn about remote sensing, machine learning, and GLOF early warning systems.">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar" id="navbar">
+        <div class="container nav-container">
+            <a href="#home" class="logo">
+                <span class="logo-icon">❄</span>
+                <span class="logo-text">ThirdPole<span class="accent">Watch</span></span>
+            </a>
+            <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation">
+                <span></span><span></span><span></span>
+            </button>
+            <ul class="nav-menu" id="navMenu">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#monitoring">Monitoring</a></li>
+                <li><a href="#technology">Technology</a></li>
+                <li><a href="#glofs">GLOF Risk</a></li>
+                <li><a href="#sdgs">SDGs</a></li>
+                <li><a href="#team">Team</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <header id="home" class="hero">
+        <div class="hero-overlay"></div>
+        <div class="container hero-content">
+            <p class="hero-eyebrow">Earth's Third Pole • Vital Water Towers of Asia</p>
+            <h1>Digital Monitoring of<br><span class="gradient-text">Glacier Melting</span> in the Himalayas</h1>
+            <p class="hero-sub">How satellites, radar, and machine learning help us track the disappearing ice that sustains nearly one billion people.</p>
+            <div class="hero-cta">
+                <a href="#monitoring" class="btn btn-primary">Explore the Science</a>
+                <a href="#technology" class="btn btn-outline">See the Technology</a>
+            </div>
+            <div class="hero-stats">
+                <div class="stat">
+                    <span class="stat-num">~1 Billion</span>
+                    <span class="stat-label">People depend on meltwater</span>
+                </div>
+                <div class="stat">
+                    <span class="stat-num">Tens of m/yr</span>
+                    <span class="stat-label">Glacier retreat rates</span>
+                </div>
+                <div class="stat">
+                    <span class="stat-num">3 Major Basins</span>
+                    <span class="stat-label">Indus • Ganga • Brahmaputra</span>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- About / Introduction -->
+    <section id="about" class="section">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag">Introduction</span>
+                <h2>The Himalayas: Earth's Third Pole</h2>
+                <p class="section-desc">High above the Indian subcontinent stands the towering expanse of the Himalayas — the largest store of ice outside the polar caps.</p>
+            </div>
+            <div class="two-col">
+                <div class="col-text">
+                    <p>These frozen giants function as the <strong>vital water towers of Asia</strong>. Every drop of seasonal meltwater feeds critical river basins — the Indus, the Ganga, and the Brahmaputra — sustaining nearly one billion people, driving agricultural productivity across the plains, and powering regional hydropower grids.</p>
+                    <p>This ancient hydrological balance is now fracturing. Rising atmospheric temperatures, shifting monsoon patterns, and the deposition of industrial black carbon are rapidly accelerating glacier retreat across the western, central, and eastern Himalayas.</p>
+                    <p>Tracking these changes from the ground is notoriously difficult: extreme altitudes, treacherous crevasses, and unpredictable weather make manual field glaciology hazardous, sparse, and logistically demanding.</p>
+                </div>
+                <div class="col-image">
+                    <img src="images/glacier1.jpg" alt="Himalayan mountain range with glaciers" loading="lazy">
+                    <p class="img-caption">Himalayan glaciers — the frozen water towers of Asia</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Why Digital Monitoring -->
+    <section id="monitoring" class="section section-alt">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag">The Challenge</span>
+                <h2>Why Digital Monitoring Matters</h2>
+                <p class="section-desc">To monitor such rugged terrain continuously, cryospheric science has shifted to the ultimate vantage point: digital remote sensing from orbit.</p>
+            </div>
+            <div class="cards-grid">
+                <div class="card">
+                    <div class="card-icon">📡</div>
+                    <h3>Optical Satellites</h3>
+                    <p>Sentinel-2 and Landsat capture multispectral data. Researchers calculate the <strong>Normalized Difference Snow Index (NDSI)</strong> to differentiate clean snow and exposed ice from surrounding rock.</p>
+                </div>
+                <div class="card">
+                    <div class="card-icon">🛰️</div>
+                    <h3>Synthetic Aperture Radar</h3>
+                    <p>When heavy monsoon cloud cover persists, <strong>Sentinel-1 SAR</strong> pierces through dense storm layers, tracking ice velocity and surface movement regardless of weather conditions.</p>
+                </div>
+                <div class="card">
+                    <div class="card-icon">📐</div>
+                    <h3>DEM Differencing</h3>
+                    <p>Successive Digital Elevation Models from missions like <strong>TanDEM-X and ALOS</strong> allow geoscientists to calculate volumetric ice loss with high precision.</p>
+                </div>
+            </div>
+            <div class="feature-image">
+                <img src="images/glacier3.jpg" alt="Glacier surface features and melt channels" loading="lazy">
+                <p class="img-caption">Aerial view of a Himalayan glacier showing surface features and melt channels</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Technology & ML -->
+    <section id="technology" class="section">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag">Technology</span>
+                <h2>Machine Learning Breakthrough</h2>
+                <p class="section-desc">A major technical challenge remains: debris-covered glaciers. This is where deep learning provides a vital breakthrough.</p>
+            </div>
+            <div class="two-col reverse">
+                <div class="col-image">
+                    <img src="images/glacier4.jpg" alt="Multi-satellite observation concept" loading="lazy">
+                    <p class="img-caption">Multi-satellite observation of glacier surface and elevation change</p>
+                </div>
+                <div class="col-text">
+                    <p>In the central and eastern Himalayas, rockfall and thick sediments bury large portions of glacier tongues. Because this surface debris shares the same spectral signature as adjacent mountain slopes, standard optical indices fail to map the true glacier boundary.</p>
+                    <h3 class="sub-heading">Deep Learning Solution</h3>
+                    <ul class="feature-list">
+                        <li><strong>Convolutional Neural Networks (CNNs)</strong> and <strong>U-Net</strong> architectures process spectral bands, topographic slope, elevation differences, and surface texture simultaneously.</li>
+                        <li>The model learns complex spatial contexts and automatically delineates difficult glacier outlines.</li>
+                        <li>This process cuts manual digitisation time from <strong>weeks to seconds</strong> and ensures consistent, standardised inventories across the entire Himalayan arc.</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- GLOF Risk -->
+    <section id="glofs" class="section section-alt">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag">Public Safety</span>
+                <h2>Glacial Lake Outburst Floods (GLOFs)</h2>
+                <p class="section-desc">Digital monitoring is far more than an academic exercise — it is a critical public safety tool.</p>
+            </div>
+            <div class="two-col">
+                <div class="col-text">
+                    <p>As glaciers melt and thin, large volumes of meltwater become trapped behind weak, unstable natural moraine dams, forming <strong>proglacial lakes</strong>.</p>
+                    <p>If a moraine wall breaches due to ice avalanches or hydrostatic pressure, it triggers a catastrophic <strong>Glacial Lake Outburst Flood</strong>. These sudden deluges can tear down mountain valleys within minutes, destroying downstream bridges, roads, power plants, and villages.</p>
+                    <div class="highlight-box">
+                        <h4>Early Warning System</h4>
+                        <p>By linking automated satellite feeds with on-site <strong>IoT water-level sensors</strong>, rapid lake-area expansion can be detected before failure occurs — giving disaster management authorities and local mountain communities the advance warning needed to save lives.</p>
+                    </div>
+                </div>
+                <div class="col-image">
+                    <img src="images/glacier5.jpg" alt="Glacier and proglacial features" loading="lazy">
+                    <p class="img-caption">Glacier surface conditions relevant to meltwater storage and risk</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SDGs -->
+    <section id="sdgs" class="section">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag">Global Impact</span>
+                <h2>Alignment with UN Sustainable Development Goals</h2>
+                <p class="section-desc">High-resolution cryospheric monitoring directly supports key United Nations Sustainable Development Goals.</p>
+            </div>
+            <div class="sdg-grid">
+                <div class="sdg-card sdg6">
+                    <span class="sdg-num">06</span>
+                    <h3>Clean Water & Sanitation</h3>
+                    <p>Safeguarding clean freshwater availability that feeds major Asian river basins serving hundreds of millions.</p>
+                </div>
+                <div class="sdg-card sdg13">
+                    <span class="sdg-num">13</span>
+                    <h3>Climate Action</h3>
+                    <p>Driving actionable climate resilience with accurate data for forecasting seasonal irrigation and water budgets.</p>
+                </div>
+                <div class="sdg-card sdg15">
+                    <span class="sdg-num">15</span>
+                    <h3>Life on Land</h3>
+                    <p>Protecting sensitive mountain ecosystems and promoting responsible land use and soil/cryosphere conservation.</p>
+                </div>
+            </div>
+            <div class="feature-image" style="margin-top: 2.5rem;">
+                <img src="images/glacier6.jpg" alt="Data processing and monitoring workflows" loading="lazy">
+                <p class="img-caption">Conceptual visualisation of data processing and monitoring workflows</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Key Takeaways -->
+    <section class="section section-dark">
+        <div class="container">
+            <div class="section-header light">
+                <span class="section-tag">Summary</span>
+                <h2>Key Takeaways</h2>
+            </div>
+            <div class="takeaways">
+                <div class="takeaway">
+                    <span class="takeaway-num">01</span>
+                    <p>The Himalayas are Earth's Third Pole and the water towers of Asia, supporting nearly one billion people.</p>
+                </div>
+                <div class="takeaway">
+                    <span class="takeaway-num">02</span>
+                    <p>Climate change, monsoon shifts, and black carbon are accelerating glacier retreat across the region.</p>
+                </div>
+                <div class="takeaway">
+                    <span class="takeaway-num">03</span>
+                    <p>Optical satellites, SAR, and DEM differencing enable continuous, all-weather monitoring from space.</p>
+                </div>
+                <div class="takeaway">
+                    <span class="takeaway-num">04</span>
+                    <p>Deep learning (CNNs & U-Net) solves the hard problem of mapping debris-covered glaciers.</p>
+                </div>
+                <div class="takeaway">
+                    <span class="takeaway-num">05</span>
+                    <p>Integrated satellite + IoT systems can provide early warning for catastrophic GLOF events.</p>
+                </div>
+                <div class="takeaway">
+                    <span class="takeaway-num">06</span>
+                    <p>This work supports SDG 6, 13, and 15 — turning observation into action for a safer future.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Team -->
+    <section id="team" class="section">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag">Project Team</span>
+                <h2>Created by Group 17</h2>
+                <p class="section-desc">Environmental Studies (CHE110) • Lovely Professional University • Section K3P26MH</p>
+            </div>
+            <div class="team-grid">
+                <div class="team-card">
+                    <div class="team-avatar">SS</div>
+                    <h3>Shubh Sharma</h3>
+                    <p class="team-role">Member 1</p>
+                    <p class="team-meta">Roll No: RK3P26MHB53<br>Reg. No: 12621940</p>
+                    <p class="team-desc">Data collection, research on remote sensing & satellite data, content coordination for optical satellites and SAR.</p>
+                </div>
+                <div class="team-card">
+                    <div class="team-avatar">IM</div>
+                    <h3>Md Idban Mallick</h3>
+                    <p class="team-role">Member 2</p>
+                    <p class="team-meta">Roll No: RK3P26MHB55<br>Reg. No: 12601601</p>
+                    <p class="team-desc">Literature review, machine learning documentation, script & content refinement, SDG alignment, and final review.</p>
+                </div>
+            </div>
+            <p class="submitted-to">Submitted to: <strong>Dr. Aditi</strong></p>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <span class="logo-icon">❄</span>
+                    <span class="logo-text">ThirdPole<span class="accent">Watch</span></span>
+                </div>
+                <p class="footer-text">An educational product on Digital Monitoring of Glacier Melting in the Himalayan Region.<br>CA-1 Project • Environmental Studies (CHE110) • Lovely Professional University</p>
+                <p class="footer-note">Content based on peer-reviewed cryospheric science and open satellite data programmes (Copernicus, Landsat, TanDEM-X).</p>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 Group 17 (K3P26MH). Educational use only.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+</body>
+</html>
