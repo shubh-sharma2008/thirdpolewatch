@@ -30,6 +30,8 @@
                 <li><a href="#glofs">GLOF Risk</a></li>
                 <li><a href="#sdgs">SDGs</a></li>
                 <li><a href="#team">Team</a></li>
+                <li><a href="#gallery">Gallery</a></li>
+                <li><a href="#tools">Tools</a></li>
             </ul>
         </div>
     </nav>
@@ -210,6 +212,84 @@
             </div>
         </div>
     </section>
+    <!-- Gallery -->
+<section id="gallery" class="section section-alt">
+    <div class="container">
+        <div class="section-header">
+            <span class="section-tag">Gallery</span>
+            <h2>Glimpses from the Project Video</h2>
+            <p class="section-desc">Frames from our video on monitoring the Himalayan cryosphere from space.</p>
+        </div>
+        <div class="gallery-grid">
+            <figure><img src="keyframe_001.jpg" alt="Video frame 1" loading="lazy"><figcaption>Frame 1</figcaption></figure>
+            <figure><img src="keyframe_002.jpg" alt="Video frame 2" loading="lazy"><figcaption>Frame 2</figcaption></figure>
+            <figure><img src="keyframe_003.jpg" alt="Video frame 3" loading="lazy"><figcaption>Frame 3</figcaption></figure>
+            <figure><img src="keyframe_004.jpg" alt="Video frame 4" loading="lazy"><figcaption>Frame 4</figcaption></figure>
+            <figure><img src="keyframe_005.jpg" alt="Video frame 5" loading="lazy"><figcaption>Frame 5</figcaption></figure>
+            <figure><img src="keyframe_006.jpg" alt="Video frame 6" loading="lazy"><figcaption>Frame 6</figcaption></figure>
+        </div>
+    </div>
+</section>
+    <!-- Tools -->
+<section id="tools" class="section">
+    <div class="container">
+        <div class="section-header">
+            <span class="section-tag">Interactive Tools</span>
+            <h2>Try the Glacier Monitoring Maths</h2>
+            <p class="section-desc">Two small calculators based on the methods used in satellite monitoring of Himalayan glaciers.</p>
+        </div>
+        <div class="tool-grid">
+            <div class="tool-box">
+                <h3>NDSI Calculator</h3>
+                <p class="tool-hint">NDSI = (Green − SWIR) / (Green + SWIR). For Sentinel-2 use Band 3 (Green) and Band 11 (SWIR). Values are reflectance from 0 to 1.</p>
+                <label for="green">Green reflectance</label>
+                <input id="green" type="number" step="0.01" min="0" max="1" placeholder="e.g. 0.70">
+                <label for="swir">SWIR reflectance</label>
+                <input id="swir" type="number" step="0.01" min="0" max="1" placeholder="e.g. 0.15">
+                <button class="btn btn-primary" id="ndsiBtn" type="button">Calculate NDSI</button>
+                <div class="tool-result" id="ndsiOut">Enter both values to see the result.</div>
+            </div>
+            <div class="tool-box">
+                <h3>Glacier Retreat Calculator</h3>
+                <p class="tool-hint">Compare a glacier's area in two years to find total loss and average loss per year.</p>
+                <label for="a1">Area in earlier year (km²)</label>
+                <input id="a1" type="number" step="0.01" min="0" placeholder="e.g. 25.4">
+                <label for="a2">Area in later year (km²)</label>
+                <input id="a2" type="number" step="0.01" min="0" placeholder="e.g. 22.1">
+                <label for="y1">Earlier year</label>
+                <input id="y1" type="number" step="1" placeholder="e.g. 2000">
+                <label for="y2">Later year</label>
+                <input id="y2" type="number" step="1" placeholder="e.g. 2020">
+                <button class="btn btn-primary" id="retreatBtn" type="button">Calculate retreat</button>
+                <div class="tool-result" id="retreatOut">Enter all four values to see the result.</div>
+            </div>
+        </div>
+    </div>
+    <script>
+    (function(){
+        var $ = function(id){ return document.getElementById(id); };
+        function show(el, html, cls){ el.className = 'tool-result ' + (cls || ''); el.innerHTML = html; }
+        $('ndsiBtn').addEventListener('click', function(){
+            var g = parseFloat($('green').value), s = parseFloat($('swir').value), out = $('ndsiOut');
+            if (isNaN(g) || isNaN(s)) return show(out, 'Please enter both Green and SWIR values.', 'warn');
+            if (g < 0 || s < 0 || g > 1 || s > 1) return show(out, 'Reflectance must be between 0 and 1.', 'warn');
+            if (g + s === 0) return show(out, 'Green and SWIR cannot both be 0.', 'warn');
+            var n = (g - s) / (g + s);
+            var label = n >= 0.4 ? 'Snow or ice (NDSI ≥ 0.4)' : 'Likely not snow or ice (NDSI < 0.4)';
+            show(out, 'NDSI = <strong>' + n.toFixed(3) + '</strong><br>' + label, n >= 0.4 ? '' : 'warn');
+        });
+        $('retreatBtn').addEventListener('click', function(){
+            var a1 = parseFloat($('a1').value), a2 = parseFloat($('a2').value);
+            var y1 = parseFloat($('y1').value), y2 = parseFloat($('y2').value), out = $('retreatOut');
+            if ([a1, a2, y1, y2].some(isNaN)) return show(out, 'Please fill in all four values.', 'warn');
+            if (y2 <= y1) return show(out, 'The later year must be after the earlier year.', 'warn');
+            if (a1 <= 0) return show(out, 'Earlier area must be greater than 0.', 'warn');
+            var loss = a1 - a2, pct = loss / a1 * 100, yrs = y2 - y1;
+            show(out, 'Area ' + (loss >= 0 ? 'lost' : 'gained') + ': <strong>' + Math.abs(loss).toFixed(2) + ' km²</strong> (' + Math.abs(pct).toFixed(1) + '%)<br>Average change: ' + (Math.abs(loss) / yrs).toFixed(3) + ' km² per year over ' + yrs + ' years', loss > 0 ? 'bad' : '');
+        });
+    })();
+    </script>
+</section>
 
     <!-- Key Takeaways -->
     <section class="section section-dark">
