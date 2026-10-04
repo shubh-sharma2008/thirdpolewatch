@@ -29,9 +29,10 @@
                 <li><a href="#technology">Technology</a></li>
                 <li><a href="#glofs">GLOF Risk</a></li>
                 <li><a href="#sdgs">SDGs</a></li>
-                <li><a href="#team">Team</a></li>
                 <li><a href="#gallery">Gallery</a></li>
                 <li><a href="#tools">Tools</a></li>
+                <li><a href="#map">Map</a></li>
+                <li><a href="#team">Team</a></li>
             </ul>
         </div>
     </nav>
@@ -324,6 +325,78 @@
             </div>
         </div>
     </section>
+    <!-- Map -->
+<section id="map" class="section section-alt">
+    <div class="container">
+        <div class="section-header">
+            <span class="section-tag">Explore</span>
+            <h2>Himalayan Glaciers and Lakes Map</h2>
+            <p class="section-desc">Tap a marker to learn about key glaciers and glacial lakes in the Third Pole region.</p>
+        </div>
+        <div id="glacierMap" role="region" aria-label="Map of Himalayan glaciers and lakes"></div>
+        <p class="map-note">Marker positions are approximate and for education only.</p>
+    </div>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.js"></script>
+    <script>
+    (function(){
+        var el = document.getElementById('glacierMap');
+        if (typeof L === 'undefined') { el.innerHTML = '<p style="padding:1rem">Map could not load. Please check your internet connection.</p>'; return; }
+        var map = L.map('glacierMap', { scrollWheelZoom: false }).setView([30.5, 82], 5);
+        L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', { maxZoom: 12, attribution: '&copy; OpenStreetMap contributors' }).addTo(map);
+        var places = [
+            { n: 'Gangotri Glacier', c: [30.92, 79.08], t: 'Uttarakhand, India. Source region of the Bhagirathi, a headstream of the Ganga. Its retreat has been widely studied.' },
+            { n: 'Siachen Glacier', c: [35.42, 77.10], t: 'Karakoram range. One of the longest glaciers outside the polar regions.' },
+            { n: 'Khumbu Glacier', c: [27.98, 86.87], t: 'Nepal, near Mount Everest. A well-known debris-covered glacier.' },
+            { n: 'Imja Lake', c: [27.90, 86.93], t: 'Nepal. A fast-growing glacial lake that has been closely monitored for flood risk.' },
+            { n: 'South Lhonak Lake', c: [27.92, 88.18], t: 'Sikkim, India. Its outburst in October 2023 caused a major flood along the Teesta river.' },
+            { n: 'Chamoli (Raunthi area)', c: [30.38, 79.73], t: 'Uttarakhand, India. A rock and ice avalanche in February 2021 triggered a deadly flood.' },
+            { n: 'Chorabari Lake, Kedarnath', c: [30.74, 79.07], t: 'Uttarakhand, India. Linked to the devastating June 2013 floods.' }
+        ];
+        places.forEach(function(p){
+            L.marker(p.c).addTo(map).bindPopup('<strong>' + p.n + '</strong><br>' + p.t);
+        });
+    })();
+    </script>
+</section>
+
+<!-- Timeline -->
+<section id="timeline" class="section">
+    <div class="container">
+        <div class="section-header">
+            <span class="section-tag">Timeline</span>
+            <h2>When Glacial Hazards Became Real</h2>
+            <p class="section-desc">Events that show why continuous digital monitoring matters.</p>
+        </div>
+        <div class="timeline">
+            <div class="tl-item">
+                <span class="tl-year">1985</span>
+                <h3>Dig Tsho, Nepal</h3>
+                <p>A glacial lake burst in the Everest region and destroyed a nearly completed hydropower plant, one of the best-documented GLOFs in the Himalaya.</p>
+            </div>
+            <div class="tl-item">
+                <span class="tl-year">2013</span>
+                <h3>Kedarnath, Uttarakhand</h3>
+                <p>Extreme rainfall and the failure of a moraine-dammed lake caused catastrophic floods. Thousands of people died or went missing.</p>
+            </div>
+            <div class="tl-item">
+                <span class="tl-year">2021</span>
+                <h3>Chamoli, Uttarakhand</h3>
+                <p>A rock and ice avalanche sent a flood down the Rishiganga and Dhauliganga rivers, damaging hydropower projects. About 200 people died or went missing.</p>
+            </div>
+            <div class="tl-item">
+                <span class="tl-year">2023</span>
+                <h3>South Lhonak Lake, Sikkim</h3>
+                <p>A glacial lake outburst flooded the Teesta valley and destroyed the Chungthang dam, causing deaths and wide damage downstream.</p>
+            </div>
+            <div class="tl-item">
+                <span class="tl-year">Today</span>
+                <h3>Watching from space</h3>
+                <p>Satellites like Sentinel-2 and Landsat track glacier area and lake growth regularly, helping detect danger earlier.</p>
+            </div>
+        </div>
+    </div>
+</section>
    <!-- FAQ -->
 <section id="faq" class="section section-alt">
     <div class="container">
