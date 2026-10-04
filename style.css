@@ -765,7 +765,17 @@ a {
 
 #toTop { position: fixed; right: 1.25rem; bottom: 1.25rem; width: 46px; height: 46px; border: 0; border-radius: 50%; background: var(--primary); color: #fff; font-size: 1.3rem; cursor: pointer; box-shadow: var(--shadow-lg); opacity: 0; pointer-events: none; transition: opacity 0.3s ease, transform 0.3s ease; z-index: 1500; }
 #toTop.show { opacity: 1; pointer-events: auto; }
-#toTop:hover { transform: translateY(-3px); background: var(--primary-dark); }
+#toTop:hover { transform: translateY(-3px); background: var(--primary-dark); }  
+.faq-list { max-width: 800px; margin: 0 auto; display: grid; gap: 0.9rem; }
+.faq-list details { background: #fff; border: 1px solid var(--border); border-radius: 14px; padding: 1rem 1.25rem; box-shadow: var(--shadow); }
+.faq-list summary { cursor: pointer; font-weight: 600; color: var(--dark); list-style: none; display: flex; justify-content: space-between; gap: 1rem; }
+.faq-list summary::-webkit-details-marker { display: none; }
+.faq-list summary::after { content: '+'; font-size: 1.4rem; line-height: 1; color: var(--accent); }
+.faq-list details[open] summary::after { content: '−'; }
+.faq-list details p { margin-top: 0.8rem; color: var(--text); }
+
+.ref-list { max-width: 800px; margin: 0 auto; padding-left: 1.4rem; display: grid; gap: 0.8rem; color: var(--text); }
+.ref-list a { color: var(--primary); }
 
 ::selection { background: var(--accent); color: #fff; }
 a:focus-visible, button:focus-visible, input:focus-visible { outline: 3px solid var(--accent); outline-offset: 2px; }
