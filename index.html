@@ -434,5 +434,24 @@
     top.addEventListener('click', function(){ window.scrollTo({ top: 0, behavior: 'smooth' }); });
 })();
 </script> 
+    <!-- Dark mode toggle -->
+<button id="themeBtn" type="button" aria-label="Toggle dark mode">🌙</button>
+<script>
+(function(){
+    var btn = document.getElementById('themeBtn'), root = document.documentElement;
+    function apply(t){
+        if (t === 'dark') { root.setAttribute('data-theme', 'dark'); btn.textContent = '☀️'; }
+        else { root.removeAttribute('data-theme'); btn.textContent = '🌙'; }
+    }
+    var saved = null;
+    try { saved = localStorage.getItem('tpw-theme'); } catch (e) {}
+    apply(saved === 'dark' ? 'dark' : 'light');
+    btn.addEventListener('click', function(){
+        var next = root.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
+        apply(next);
+        try { localStorage.setItem('tpw-theme', next); } catch (e) {}
+    });
+})();
+</script>
 </body>
 </html>
