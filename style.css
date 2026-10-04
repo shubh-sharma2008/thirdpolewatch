@@ -779,3 +779,25 @@ a {
 
 ::selection { background: var(--accent); color: #fff; }
 a:focus-visible, button:focus-visible, input:focus-visible { outline: 3px solid var(--accent); outline-offset: 2px; }
+#themeBtn { position: fixed; left: 1.25rem; bottom: 1.25rem; width: 46px; height: 46px; border: 1px solid var(--border); border-radius: 50%; background: var(--bg); font-size: 1.3rem; cursor: pointer; box-shadow: var(--shadow-lg); z-index: 1500; transition: transform 0.3s ease; }
+#themeBtn:hover { transform: scale(1.1); }
+
+html[data-theme="dark"] { --bg: #0B1220; --bg-alt: #111A2E; --text: #CBD5E1; --text-light: #94A3B8; --border: #26324A; --accent-soft: #0F2F3A; --shadow: 0 4px 20px rgba(0,0,0,0.4); --shadow-lg: 0 12px 40px rgba(0,0,0,0.5); }
+html[data-theme="dark"] .navbar { background: rgba(11,18,32,0.92); }
+html[data-theme="dark"] .nav-menu { background: #0B1220; }
+html[data-theme="dark"] .logo,
+html[data-theme="dark"] .section-header h2,
+html[data-theme="dark"] .card h3,
+html[data-theme="dark"] .team-card h3,
+html[data-theme="dark"] .tool-box h3,
+html[data-theme="dark"] .faq-list summary { color: #F1F5F9; }
+html[data-theme="dark"] .hamburger span,
+html[data-theme="dark"] .nav-toggle span { background: #F1F5F9; }
+html[data-theme="dark"] .tool-box,
+html[data-theme="dark"] .gallery-grid figure,
+html[data-theme="dark"] .faq-list details { background: #16213A; }
+html[data-theme="dark"] .tool-box input { background: #0B1220; color: #E2E8F0; }
+html[data-theme="dark"] .tool-result { color: #E2E8F0; }
+html[data-theme="dark"] .tool-result.warn,
+html[data-theme="dark"] .tool-result.bad { color: #0F172A; }
+html[data-theme="dark"] .ref-list a { color: #5EC8D8; }
