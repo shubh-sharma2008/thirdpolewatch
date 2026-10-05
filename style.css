@@ -755,11 +755,6 @@ a {
 .tool-result { margin-top: 1.1rem; padding: 1rem; border-radius: 10px; background: var(--accent-soft); color: var(--dark); min-height: 3rem; }
 .tool-result.warn { background: #FEF3C7; }
 .tool-result.bad { background: #FEE2E2; }
-.gallery-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 1.25rem; }
-.gallery-grid figure { margin: 0; border-radius: 16px; overflow: hidden; background: #fff; box-shadow: var(--shadow); }
-.gallery-grid img { display: block; width: 100%; aspect-ratio: 16 / 10; object-fit: cover; transition: transform 0.4s ease; }
-.gallery-grid figure:hover img { transform: scale(1.06); }
-.gallery-grid figcaption { padding: 0.6rem 0.9rem; font-size: 0.85rem; color: var(--text-light); }
 
 #scrollBar { position: fixed; top: 0; left: 0; height: 4px; width: 0; background: var(--gradient); z-index: 2000; }
 
